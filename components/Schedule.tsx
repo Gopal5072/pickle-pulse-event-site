@@ -1,4 +1,4 @@
-export default function Schedule() {
+export default function Schedule(){
   return (
     <section id="schedule">
       <h2>Event Schedule</h2>
