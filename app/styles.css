@@ -1,4 +1,55 @@
-/* Global Reset */
+/* Design System - Custom Properties */
+:root {
+  /* Colors */
+  --primary-100: #F4F6FF;
+  --primary-200: #E2E8FF;
+  --primary-500: #5C6EFF;
+  --primary-600: #3D53FF;
+  --primary-700: #2B3FFF;
+  
+  --secondary-100: #E6FFF3;
+  --secondary-500: #34D399;
+  --secondary-600: #10B981;
+  
+  --neutral-100: #FFFFFF;
+  --neutral-200: #F8FAFC;
+  --neutral-300: #F1F5F9;
+  --neutral-600: #475569;
+  --neutral-700: #1E293B;
+  --neutral-800: #0F172A;
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Geist Sans', var(--font-primary);
+  
+  /* Spacing */
+  --space-xs: clamp(0.75rem, 1vw, 1rem);
+  --space-sm: clamp(1rem, 2vw, 1.5rem);
+  --space-md: clamp(2rem, 3vw, 3rem);
+  --space-lg: clamp(3rem, 4vw, 4rem);
+  --space-xl: clamp(4rem, 5vw, 5rem);
+  
+  /* Other Variables */
+  --border-radius: 8px;
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+/* Updated Color Variables */
+:root {
+  /* Green Color Palette */
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #7befa6;
+  --color-green-400: #49f387;
+  --color-green-500: #27df6b;
+  --color-green-600: #1fd562;
+  --color-green-700: #12a749;
+  
+  --gradient-green: linear-gradient(135deg, #5ad186 0%, #5a7966 100%);
+}
+
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,15 +57,16 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f1fdf5; /* Light Green Background */
+  font-family: var(--font-primary);
+  color: var(--neutral-700);
+  background-color: var(--neutral-100);
   margin: 0;
   padding: 0;
 }
 
 /* General Styling for Headings and Text */
 h1, h2, h3, h4 {
-  color: #1e293b;
+  color: var(--neutral-700);
   font-family: 'Geist Sans', sans-serif;
 }
 
@@ -25,7 +77,7 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
-  color: #1e293b;
+  color: var(--neutral-700);
   font-weight: normal;
 }
 
@@ -48,7 +100,7 @@ p {
 /* Navbar Styles */
 /* Navbar Styles */
 header {
-  background: linear-gradient(90deg, rgba(48, 135, 98, 1) 0%, rgba(75, 85, 99, 1) 100%);
+  background: linear-gradient(90deg, rgb(21, 177, 118) 0%, rgb(81, 136, 158) 100%);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -154,7 +206,7 @@ header.scrolled {
 
 /* Hero Section Styling */
 section.hero {
-  background-image: url('/images/hero.jpg');
+  background-image: url('/images/hero.png');
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -171,7 +223,7 @@ section.hero {
 section.hero h1 {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #368563;
+  color: #dde2e0;
   animation: fadeIn 1.5s ease-in-out forwards;
   z-index: 10;
 }
@@ -211,7 +263,6 @@ section.hero::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -510,110 +561,206 @@ form {
   }
 }
 /* Venue Section Styles */
-section#venue {
-  background-color: #ffffff;
+#venue {
   padding: 5rem 2rem;
+  background: var(--color-neutral-100);
+}
+
+.venue-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.venue-header {
   text-align: center;
-  animation: fadeIn 1.5s ease-in-out forwards;
-}
-
-/* Venue Title */
-section#venue h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1e293b;
-  margin-bottom: 2rem;
-  animation: fadeIn 1s ease-out forwards;
-}
-
-/* Venue Description */
-section#venue p {
-  font-size: 1.125rem;
-  color: #4b5563;
-  line-height: 1.8;
-  margin-bottom: 3rem;
-  animation: fadeIn 1.5s ease-out forwards;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 4rem;
 }
 
-/* Venue Images Container */
-section#venue .venue-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-}
-
-/* Individual Venue Image Styling */
-section#venue .venue-images img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-section#venue .venue-images img:hover {
-  transform: scale(1.05); /* Zoom effect on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Highlight with shadow on hover */
-}
-
-/* Venue CTA Button */
-section#venue .cta-button {
-  background-color: #a7f3d0; /* Light Green */
-  color: black;
-  padding: 1rem 2rem;
-  border-radius: 50px;
+.venue-header h2 {
+  font-size: 3.5rem;
+  color: #4e5053;
+  margin-bottom: 2rem;
   font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
+}
+
+.venue-intro {
+  background: var(--gradient-green);
+  padding: 3rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.1);
+}
+
+.venue-intro h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.venue-intro p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.venue-features-card {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  background: var(--gradient-green);
+  border-radius: 20px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.1);
+}
+
+.features-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.venue-features {
+  list-style: none;
+}
+
+.venue-features li {
+  padding: 1rem 0;
+  padding-left: 2rem;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.venue-features li:last-child {
+  border-bottom: none;
+}
+
+.venue-features li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-green-200);
+}
+
+.venue-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.venue-image-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.venue-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.venue-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
+}
+
+.venue-map {
   margin-top: 3rem;
-  transition: background-color 0.3s, transform 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-section#venue .cta-button:hover {
-  background-color: #68d391; /* Darker Green */
-  transform: scale(1.05); /* Slight zoom on hover */
+.venue-map-frame {
+  border: none;
+  width: 100%;
+  height: 400px;
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-  section#venue {
-    padding: 3rem 1rem;
-  }
-
-  section#venue h2 {
-    font-size: 2rem;
-  }
-
-  section#venue p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  section#venue .venue-images {
+@media (max-width: 1200px) {
+  .venue-grid {
     grid-template-columns: 1fr;
   }
 
-  section#venue .cta-button {
-    width: 100%;
+  .venue-features-card {
+    position: static;
+    margin-bottom: 2rem;
   }
 }
+
+@media (max-width: 768px) {
+  .venue-container {
+    padding: 0 1rem;
+  }
+
+  .venue-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .venue-intro {
+    padding: 2rem;
+  }
+
+  .venue-intro h3 {
+    font-size: 1.5rem;
+  }
+
+  .venue-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-features li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .venue-map-frame {
+    height: 300px;
+  }
+}
+
+/* Animation */
+.venue-image-wrapper {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Animation */
+.venue-image.loading {
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
 /* Footer Styling */
 footer {
   background-color: #1e293b; /* Dark background for contrast */
