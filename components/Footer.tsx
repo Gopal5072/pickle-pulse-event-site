@@ -1,32 +1,58 @@
 export default function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer-container">
-        <p>&copy; 2025 Transcurators. All rights reserved.</p>
-        
-        {/* Shortcuts Section */}
-        <div className="footer-shortcuts">
-          <h3>Quick Links</h3>
-          <div className="footer-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">FAQ</a>
+        <div className="footer-content">
+          <div className="footer-brand">
+            <h3>Court and Corporate</h3>
+            <p>Where Business Meets Sports</p>
+          </div>
+          
+          <div className="footer-nav-section">
+            <h4>Quick Links</h4>
+            <nav>
+              <a href="#hero">Home</a>
+              <a href="#about">About</a>
+              <a href="#schedule">Schedule</a>
+              <a href="#venue">Venue</a>
+              <a href="#register">Register</a>
+            </nav>
+          </div>
+
+          <div className="footer-contact">
+            <h4>Contact Us</h4>
+            <p>📧 gopal.k@transcurators.com</p>
+            <p>📱 +91 95188 42454</p>
           </div>
         </div>
 
-        {/* Social Media Icons Section */}
-        <div className="footer-socials">
-          <a href="#" className="social-icon"><i className="fab fa-facebook-f"></i></a>
-          <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
-          <a href="#" className="social-icon"><i className="fab fa-instagram"></i></a>
-          <a href="#" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
-        </div>
-        
-        {/* Privacy and Terms Links */}
-        <div className="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
+        <div className="footer-bottom">
+          <div className="social-links">
+            <a href="#" aria-label="LinkedIn">
+              {/* LinkedIn SVG */}
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.025-3.037-1.85-3.037-1.852 0-2.135 1.446-2.135 2.939v5.667h-3.554V9h3.414v1.561h.048c.476-.9 1.637-1.848 3.369-1.848 3.602 0 4.267 2.368 4.267 5.453v6.286zM5.337 7.433c-1.144 0-2.069-.927-2.069-2.069 0-1.143.925-2.07 2.069-2.07 1.143 0 2.07.927 2.07 2.07 0 1.142-.927 2.069-2.07 2.069zm1.777 13.019h-3.554V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.272V1.723C24 .771 23.2 0 22.225 0z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              {/* Twitter SVG (X) */}
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true">
+                <path d="M22.162 5.656c-.793.342-1.645.572-2.54.677.913-.547 1.615-1.413 1.946-2.447-.856.508-1.804.877-2.806 1.076A4.437 4.437 0 0 0 15.403 4c-2.449 0-4.435 1.986-4.435 4.436 0 .348.039.687.115 1.013-3.688-.185-6.957-1.952-9.145-4.636a4.422 4.422 0 0 0-.601 2.231c0 1.539.783 2.895 1.975 3.693-.726-.022-1.41-.222-2.007-.555v.056c0 2.151 1.531 3.946 3.563 4.352-.372.102-.765.157-1.17.157-.286 0-.563-.028-.832-.08.563 1.757 2.199 3.034 4.138 3.067a8.885 8.885 0 0 1-5.504 1.896c-.357 0-.709-.021-1.055-.063A12.544 12.544 0 0 0 8.092 21c7.548 0 11.678-6.253 11.678-11.678 0-.178-.004-.356-.012-.532.803-.58 1.5-1.31 2.052-2.134z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              {/* Instagram SVG */}
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.342 3.608 1.316.976.976 1.255 2.243 1.317 3.609.058 1.267.07 1.647.07 4.851s-.012 3.584-.07 4.851c-.062 1.366-.341 2.633-1.317 3.608-.975.975-2.242 1.254-3.608 1.316-1.267.058-1.647.07-4.851.07s-3.584-.012-4.851-.07c-1.366-.062-2.633-.341-3.608-1.316-.976-.975-1.255-2.242-1.317-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.851c.062-1.366.341-2.633 1.317-3.609C4.525 2.574 5.792 2.295 7.158 2.233 8.425 2.175 8.805 2.163 12 2.163zm0-2.163C8.691 0 8.259.014 7.053.072 5.809.133 4.643.455 3.678 1.42 2.713 2.386 2.39 3.552 2.328 4.796.014 8.259 0 8.691 0 12s.014 3.741.072 4.947C.133 18.191.455 19.357 1.42 20.322c.965.965 2.131 1.287 3.276 1.349C8.259 23.986 8.691 24 12 24s3.741-.014 4.947-.072c1.145-.062 2.311-.384 3.276-1.349.965-.965 1.287-2.131 1.349-3.276C23.986 15.741 24 15.309 24 12s-.014-3.741-.072-4.947C23.867 5.809 23.545 4.643 22.58 3.678c-.965-.965-2.131-1.287-3.276-1.349C15.741.014 15.309 0 12 0zm0 5.838a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326zm0 10.163A3.999 3.999 0 1 1 12 8a3.999 3.999 0 0 1 0 7.999zm7.2-11.408a1.44 1.44 0 1 0 2.88 0 1.44 1.44 0 0 0-2.88 0z"/>
+              </svg>
+            </a>
+          </div>
+          <p className="copyright">© 2025 Court and Corporate. All rights reserved.</p>
+          <div className="legal">
+            <a href="#">Privacy Policy</a>
+            <span className="separator">•</span>
+            <a href="#">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
