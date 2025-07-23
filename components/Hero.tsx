@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="hero">
       <div>
         <h1>Court and Corporate</h1>
-        <p>Where strategy meets serve!</p>
+        <p>Where Business meets sports!</p>
         <p>30 August 2025 | Gurugram</p>
         <button 
           onClick={handleRegisterClick}

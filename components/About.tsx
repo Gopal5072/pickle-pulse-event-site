@@ -18,7 +18,7 @@ export default function About() {
       <div className="about-container">
         <div className="about-header">
           <h2>About Court and Corporate</h2>
-          <p className="about-subtitle">Where Business Meets Sport</p>
+          <p className="about-subtitle">Where Business Meets Sports!</p>
         </div>
 
         <div className="about-content">
