@@ -21,8 +21,8 @@ export default function Schedule() {
     {
       time: "8:00 PM",
       title: "Refreshment Break",
-      description: "Light dinner, drinks, and structured networking opportunity",
-      icon: "🍽️"
+      description: "Light refreshments and structured networking opportunity",
+      icon: "☕"
     },
     {
       time: "8:30 PM",
@@ -46,36 +46,25 @@ export default function Schedule() {
 
   return (
     <section id="schedule" className="schedule-section">
-      <div className="schedule-bg"></div>
       <div className="schedule-container">
         <div className="schedule-header">
-          <h2>Evening Schedule</h2>
-          <p className="schedule-subtitle">A Relaxed Evening of Sports & Networking</p>
+          <h2>Event Timeline</h2>
+          <p className="schedule-subtitle">A well-planned evening of networking and sports</p>
         </div>
-
-        <div className="schedule-cards">
+        
+        <div className="timeline">
           {scheduleItems.map((item, index) => (
-            <div key={index} className="schedule-card">
-              <div className="card-icon">{item.icon}</div>
-              <div className="time-badge">{item.time}</div>
-              <div className="card-content">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+            <div key={index} className="timeline-item">
+              <div className="timeline-content">
+                <span className="timeline-icon">{item.icon}</span>
+                <div className="timeline-time">{item.time}</div>
+                <div className="timeline-details">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
               </div>
-              {index !== scheduleItems.length - 1 && <div className="connector"></div>}
             </div>
           ))}
-        </div>
-
-        <div className="schedule-footer">
-          <div className="info-card">
-            <div className="info-icon">ℹ️</div>
-            <p>Flexible timeline to ensure a relaxed networking experience</p>
-          </div>
-          <div className="info-card">
-            <div className="info-icon">🔄</div>
-            <p>Feel free to move between different sports and networking groups</p>
-          </div>
         </div>
       </div>
     </section>
