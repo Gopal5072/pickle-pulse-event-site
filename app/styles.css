@@ -285,15 +285,14 @@ nav a:hover {
 /* Hero Section Styling */
 .hero {
   position: relative;
-  height: calc(100vh - 80px); /* Adjusted for navbar height */
+  height: calc(100vh); /* Adjusted for navbar height */
   min-height: 600px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--neutral-800);
-  margin-top: 80px; /* Space for navbar */
+  background-color: var(--neutral-800); /* Space for navbar */
 }
 
 .hero::before {
