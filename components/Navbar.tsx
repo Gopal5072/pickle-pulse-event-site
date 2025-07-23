@@ -14,11 +14,31 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.querySelector(sectionId);
+    
+    if (section) {
+      // Close mobile menu if open
+      setIsMobileMenuOpen(false);
+      
+      // Calculate offset for fixed header
+      const headerOffset = 80;
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-left">
-          <h1>Court and Corporate</h1>
+          <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')}><h1>Court and Corporate</h1></a>
         </div>
 
         <button 
@@ -32,11 +52,11 @@ export default function Navbar() {
         </button>
 
         <nav className={isMobileMenuOpen ? 'active' : ''}>
-          <a href="#about">About</a>
-          <a href="#schedule">Schedule</a>
-          <a href="#venue">Venue</a>
-          <a href="#sponsors">Sponsors</a>
-          <a href="#register" className="register-btn">Register</a>
+          <a href="#about" onClick={(e) => handleNavClick(e, '#about')}>About</a>
+          <a href="#schedule" onClick={(e) => handleNavClick(e, '#schedule')}>Schedule</a>
+          <a href="#venue" onClick={(e) => handleNavClick(e, '#venue')}>Venue</a>
+          <a href="#sponsors" onClick={(e) => handleNavClick(e, '#sponsors')}>Sponsors</a>
+          <a href="#register" onClick={(e) => handleNavClick(e, '#register')} className="register-btn">Register</a>
         </nav>
       </div>
     </header>

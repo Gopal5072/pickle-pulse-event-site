@@ -1,26 +1,38 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-
 export default function Hero() {
-  const router = useRouter();
+  const handleScrollToRegister = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const registerSection = document.querySelector('#register');
+    
+    if (registerSection) {
+      const headerOffset = 80;
+      const elementPosition = registerSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-  const handleRegisterClick = () => {
-    router.push('/register');
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
-    <section className="hero">
-      <div>
+    <section id="hero" className="hero">
+      <div className="hero-content">
         <h1>Court and Corporate</h1>
-        <p>Where Business meets sports!</p>
-        <p>30 August 2025 | Gurugram</p>
-        <button 
-          onClick={handleRegisterClick}
-          className="hero-cta-button"
-        >
-          Request Invite
-        </button>
+        <p className="hero-tagline">Where Business meets sports!</p>
+        <p className="hero-date">30 August 2025 | Gurugram</p>
+        <div className="hero-cta">
+          <a 
+            href="#register" 
+            onClick={handleScrollToRegister}
+            className="hero-cta-button"
+            aria-label="Request event invitation"
+          >
+            Request Invite
+          </a>
+        </div>
       </div>
     </section>
   );
