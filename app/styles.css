@@ -994,6 +994,16 @@ section#register h2 {
   text-transform: uppercase;
 }
 
+section#register h4 {
+  font-size: 1.0rem;
+  font-weight: 700;
+  color: #172554; /* Deep blue */
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  animation: fadeIn 1s ease-out forwards;
+  text-transform: uppercase;
+}
+
 /* Input Fields */
 form input {
   width: 100%;

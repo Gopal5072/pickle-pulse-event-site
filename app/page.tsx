@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import About from '../components/About'
-import Schedule from '../components/Schedule'
+//import Schedule from '../components/Schedule'
 import Venue from '../components/Venue'
 import Sponsors from '../components/Sponsors'
 import RegistrationForm from '../components/RegistrationForm'
@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Schedule />
+      {/* <Schedule /> */}
       <Venue />
       <Sponsors />
       <RegistrationForm />

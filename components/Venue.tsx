@@ -24,6 +24,11 @@ export default function Venue() {
       icon: "🎯", 
       title: "Multi-Purpose Space", 
       desc: "Flexible areas that adapt to various activities and group sizes" 
+    },
+    { 
+      icon: "🎯", 
+      title: "Food ka kuch add krna h", 
+      desc: "content" 
     }
   ];
 

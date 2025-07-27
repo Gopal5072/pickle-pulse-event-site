@@ -29,18 +29,18 @@ export default function About() {
               brings together <strong>C-suite executives</strong>, <strong>VPs</strong>, and 
               <strong> senior professionals</strong> for an extraordinary day of sports and networking.
             </p>
-            <div className="sports-tags">
+            {/* <div className="sports-tags">
               {sports.map((sport, index) => (
                 <span key={index} className="sport-tag">
                   {sport.icon} {sport.name}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="vision-card">
-            <h3>Our Vision</h3>
-            <p>
+            <h3>Sports</h3>
+            {/* <p>
               At <strong>Court and Corporate</strong>, we believe in the power of sports 
               to foster meaningful business relationships and personal growth in a dynamic, 
               engaging environment.
@@ -49,7 +49,14 @@ export default function About() {
               {visionPoints.map((point, index) => (
                 <li key={index}>{point}</li>
               ))}
-            </ul>
+            </ul> */}
+            <div className="sports-tags">
+              {sports.map((sport, index) => (
+                <span key={index} className="sport-tag">
+                  {sport.icon} {sport.name}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="activities-card">
@@ -70,6 +77,14 @@ export default function About() {
               <div className="activity-item">
                 <h4>Well-being</h4>
                 <p>Promote active lifestyle while expanding your professional network</p>
+              </div>
+              <div className="activity-item">
+                <h4>5</h4>
+                <p>Content</p>
+              </div>
+              <div className="activity-item">
+                <h4>6</h4>
+                <p>Content</p>
               </div>
             </div>
           </div>
